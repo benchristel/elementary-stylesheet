@@ -106,8 +106,8 @@ button {
 
         &:active,
         &:checked {
-            border-color: $BG_6;//mix($BG_5, black, $weight: 50%);
-            background: $BG_6;//mix($BG_5, black, $weight: 10%);
+            border-color: $BG_6;
+            background: $BG_5;
             color: #fff;
             text-shadow: none;
             box-shadow: $groove-highlight, inset-shadow(), inset 0 1px 3px rgba(black, 0.25);
