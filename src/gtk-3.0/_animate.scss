@@ -12,7 +12,7 @@
     }
 
     @if $transition == "in-place" {
-        @return 100ms;
+        @return 0ms;
     }
 }
 
