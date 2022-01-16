@@ -42,7 +42,7 @@ $warning-icon-color: mix($BANANA_500, $BANANA_700, $weight: 50%);
             @return white;
         // Background
         } @else if $level == 2 {
-            @return $SILVER_100;
+            @return #e8e8e8;
         // Sidebars and inline toolbars
         } @else if $level == 3 {
             @return mix($SILVER_100, $SILVER_300, $weight: 75%);
