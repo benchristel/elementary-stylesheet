@@ -1,3 +1,11 @@
+@function engraved-text-shadow() {
+    @if $color-scheme == "dark" {
+        @return 0 -1px rgba(#000, 0.25);
+    } @else {
+        @return 0 1px rgba(#fff, 0.75);
+    }
+}
+
 .h1 {
     font-size: 24pt;
     font-weight: 700;

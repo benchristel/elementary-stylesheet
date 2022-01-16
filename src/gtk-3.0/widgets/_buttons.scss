@@ -3,10 +3,13 @@ button {
     border-radius: rem(3px);
     -gtk-outline-radius: rem(5px);
     // Explicitly set in case containers override default color
-    color: #{'@fg_color'};
+    color: $FG;
+    text-shadow: engraved-text-shadow();
     // Off-by-one to account for padding-box clip
     padding: rem(4px) rem(7px);
     transition: background duration("in-place") $easing;
+    background: linear-gradient(to bottom, $BG_0, $BG_1);
+    box-shadow: $groove-highlight;
 
     &.flat,
     &.image-button:not(.text-button) {
@@ -35,14 +38,10 @@ button {
     &.model.image-button,
     &.raised.image-button,
     & {
-        @extend %outset-background;
+        /*@extend %outset-background;*/
 
         background-clip: padding-box;
-        background-color: bg-color(0);
-        border: 1px solid $border-color;
-        box-shadow:
-            outset-highlight("full"),
-            outset-shadow(2);
+        border: 1px solid $BG_6;
 
         headerbar & {
             border-radius: rem(3px);
@@ -107,12 +106,11 @@ button {
 
         &:active,
         &:checked {
-            background: rgba(black, 0.05);
-            box-shadow: inset-shadow();
-
-            @if $color-scheme == "dark" {
-                background: rgba(black, 0.15);
-            }
+            border-color: $BG_6;//mix($BG_5, black, $weight: 50%);
+            background: $BG_6;//mix($BG_5, black, $weight: 10%);
+            color: #fff;
+            text-shadow: none;
+            box-shadow: $groove-highlight, inset-shadow(), inset 0 1px 3px rgba(black, 0.25);
         }
 
         &:disabled {
@@ -126,8 +124,7 @@ button {
             @if $color-scheme == "light" {
                 border-color: #{'@accent_color'};
             }
-            color: #{'@selected_fg_color'};
-            outline-color: #{'alpha(@accent_color, 0.3)'};
+            outline-color: #{'alpha(@accent_color, 0.7)'};
             outline-width: rem(2px);
             outline-style: solid;
         }

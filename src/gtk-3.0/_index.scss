@@ -1,3 +1,5 @@
+@import "_palette.scss";
+
 // The default titlebar color
 $titlebar-color: mix($SILVER_100, $SILVER_300, $weight: 30%);
 
@@ -32,36 +34,42 @@ $warning-icon-color: mix($BANANA_500, $BANANA_700, $weight: 50%);
     $warning-icon-color: $BANANA_500;
 }
 
+$FG:   $OFF_BLACK_2;
+$BG_0: $OFF_WHITE_0;
+$BG_1: $OFF_WHITE_1;
+$BG_2: $OFF_WHITE_2;
+$BG_3: $OFF_WHITE_3;
+$BG_4: $OFF_WHITE_4;
+$BG_5: $OFF_WHITE_5;
+$BG_6: $OFF_WHITE_6;
+
+@if $color-scheme == "dark" {
+    $FG:   $OFF_WHITE_2;
+    $BG_0: $OFF_BLACK_5;
+    $BG_1: $OFF_BLACK_4;
+    $BG_2: $OFF_BLACK_3;
+    $BG_3: $OFF_BLACK_2;
+    $BG_4: $OFF_BLACK_1;
+    $BG_5: $OFF_BLACK_0;
+    $BG_6: $OFF_BLACK_0;
+}
+
+$groove-highlight: 0 1px rgba($BG_0, 0.85);
+
 @function bg-color($level) {
-    @if $color-scheme == "light" {
-        // Inputs
-        @if $level == 0 {
-            @return $SILVER_100;
-        // Views
-        } @else if $level == 1 {
-            @return white;
-        // Background
-        } @else if $level == 2 {
-            @return #e8e8e8;
-        // Sidebars and inline toolbars
-        } @else if $level == 3 {
-            @return mix($SILVER_100, $SILVER_300, $weight: 75%);
-        // Titlebars and toolbars
-        } @else if $level == 4 {
-            @return $titlebar-color;
-        }
-    } @else if $color-scheme == "dark" {
-        @if $level == 0 {
-            @return mix($BLACK_300, $BLACK_500, $weight: 50%);
-        } @else if $level == 1 {
-            @return mix($BLACK_300, $BLACK_500, $weight: 25%);
-        } @else if $level == 2 {
-            @return $BLACK_500;
-        } @else if $level == 3 {
-            @return mix($BLACK_500, $BLACK_700, $weight: 90%);
-        } @else if $level == 4 {
-            @return mix($BLACK_500, $BLACK_700, $weight: 45%);
-        }
+    // Inputs
+    @if $level == 0 {
+        @return $BG_1;
+    } @else if $level == 1 {
+        @return $BG_0;
+    } @else if $level == 2 {
+        @return $BG_1;
+    // Sidebars and inline toolbars
+    } @else if $level == 3 {
+        @return $BG_2;
+    // Titlebars and toolbars
+    } @else if $level == 4 {
+        @return $BG_3;
     }
 }
 
