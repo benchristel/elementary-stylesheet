@@ -6,7 +6,7 @@ button {
     color: $FG;
     text-shadow: engraved-text-shadow();
     // Off-by-one to account for padding-box clip
-    padding: rem(4px) rem(7px);
+    padding: rem(1px) rem(7px);
     transition: background duration("in-place") $easing;
     background: linear-gradient(to bottom, $BG_0, $BG_1);
     box-shadow: $groove-highlight;
