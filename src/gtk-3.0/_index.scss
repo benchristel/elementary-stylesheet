@@ -14,6 +14,8 @@ $border-color: rgba(black, 0.2);
 
 // Disabled entries, views, checkbuttons, spinbuttons
 $insensitive-base-color: rgba(0, 0, 0, 0.03);
+$groove-highlight: 0 1px #fff;
+$groove-highlight-dim: 0 1px #d2d2d2;
 
 // Semantic colors
 $error_color: $STRAWBERRY_500;
@@ -21,9 +23,12 @@ $success_color: $LIME_700;
 $warning_color: $BANANA_900;
 $warning-icon-color: mix($BANANA_500, $BANANA_700, $weight: 50%);
 
-$FG:   $OFF_BLACK_2;
+$FG:   $OFF_BLACK_0;
 $BG_0: $OFF_WHITE_0; // inputs, lists
 $BG_1: $OFF_WHITE_1; // default background
+$BG_2: $OFF_WHITE_2; // sidebars, top of window header
+$BG_3: $OFF_WHITE_3;
+$BG_4: $OFF_WHITE_4;
 $BG_5: $OFF_WHITE_5; // recessed selected elements
 $BG_6: $OFF_WHITE_6; // deep grooves, sharp borders
 
@@ -33,20 +38,23 @@ $BG_6: $OFF_WHITE_6; // deep grooves, sharp borders
     $toplevel-border-color: rgba(black, 0.75);
     $border-color: rgba(black, 0.3);
     $insensitive-base-color: rgba(0, 0, 0, 0.075);
+    $groove-highlight: 0 1px #555;
+    $groove-highlight-dim: 0 1px #484848;
 
     $error-color: $STRAWBERRY_300;
     $success-color: $LIME_300;
     $warning-color: $BANANA_100;
     $warning-icon-color: $BANANA_500;
-    
+
     $FG:   $OFF_WHITE_1;
     $BG_0: $OFF_BLACK_4; // inputs, lists
     $BG_1: $OFF_BLACK_3; // default background
+    $BG_2: $OFF_BLACK_3; // sidebars?
+    $BG_3: $OFF_BLACK_3;
+    $BG_4: $OFF_BLACK_2;
     $BG_5: $OFF_BLACK_2; // recessed selected elements
     $BG_6: $OFF_BLACK_0; // deep grooves, sharp borders
 }
-
-$groove-highlight: 0 1px rgba($BG_0, 0.85);
 
 @function bg-color($level) {
     // Inputs
